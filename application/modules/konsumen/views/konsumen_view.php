@@ -8,7 +8,7 @@
 
 	<div class="card">
 	<div class="card-header">
-		<h3 class="card-title">DATA PASIEN </h3>
+		<h3 class="card-title">DATA KONSUMEN </h3>
 	</div>
 									
 

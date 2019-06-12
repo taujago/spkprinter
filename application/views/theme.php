@@ -51,6 +51,7 @@
 
 <script src="<?php echo base_url(); ?>/theme/vendor/sweetalert2/sweetalert2.js"></script>
 
+<script src="<?php echo base_url(); ?>/theme/vendor/jqueryform/jquery.form.min.js"></script>
 
 </head>
 
@@ -95,7 +96,7 @@
            
             <a class="collapse-item"  href="<?php echo site_url("gejala") ?>">GEJALA </a>
 <a class="collapse-item" href="<?php echo site_url("kerusakan") ?>">KERUSAKAN </a>
-<a class="collapse-item" href="<?php echo site_url("penyakit/pengetahuan") ?>">PENGETAHUAN </a>
+<a class="collapse-item" href="<?php echo site_url("kerusakan/pengetahuan") ?>">PENGETAHUAN </a>
 <a class="collapse-item" href="<?php echo site_url("referensi") ?>">REFERENSI </a>
 <!-- <a class="collapse-item" href="<?php echo site_url("kemiripan") ?>">KEMIRIPAN GEJALA </a> -->
           </div>
@@ -107,19 +108,19 @@
       <li class="nav-item">
                 <a class="nav-link  <?php echo ($this->controller=="konsumen")?"active":""; ?>" href="<?php echo site_url("konsumen"); ?>">
                   <i class="fa fa-user"></i>
-                  <span>DATA PASIEN</span>
+                  <span>DATA KONSUMEN</span>
                 </a>
               </li>
-              <li class="nav-item">
+             <!--  <li class="nav-item">
                 <a class="nav-link <?php echo ($this->controller=="laporan")?"active":""; ?>" href="<?php echo site_url("konsultasi/laporan"); ?>">
                   <i class="fa fa-file"></i>
                   <span>REKAP HASIL KONSULTASI</span>
                 </a>
-              </li> 
+              </li>  -->
 <?php endif; ?> 
       <li class="nav-item">
                 <a class="nav-link <?php echo ($this->controller=="konsultasi")?"active":""; ?>" href="<?php echo site_url("konsultasi"); ?>">
-                  <i class="fa fa-lightbulb-o"></i>
+                  <i class="fa fa-star"></i>
                   <span>KONSULTASI</span>
                 </a>
               </li>
@@ -219,7 +220,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>&copy; 2019. Cindy  - USTJ Jayapura </span>
           </div>
         </div>
       </footer>

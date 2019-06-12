@@ -51,7 +51,7 @@
 							</div>
 							<form id="frmlogin" class="card" method="post">
 								<div class="card-body">
-									<div class="card-title text-center">Pendaftaran Pasien</div>
+									<div class="card-title text-center">Pendaftaran Konsumen</div>
 									<div class="row">
 										
 									<div class="col-md-12">

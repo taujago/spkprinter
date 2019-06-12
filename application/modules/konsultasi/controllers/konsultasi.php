@@ -24,7 +24,7 @@ class konsultasi extends master_controller {
 		 
 		$content = $this->load->view($this->controller."_view_form",$data_array,true);
 
-		$this->set_title("KONSULTASI  PENYAKIT PERNAFASAN");
+		$this->set_title("DIAGNOSA KERUSAKAN PRINTER");
 		$this->set_content($content);
 		$this->render();
 	}
@@ -92,9 +92,9 @@ endforeach;
 	 // redirect("konsultasi/detail/$id_pemeriksaan");
 
 // ambil data referensi pasien lama 
-  $this->db->select("r.*, p.penyakit")
+  $this->db->select("r.*, p.kerusakan, p.solusi ")
   ->from('referensi r')
-  ->join('penyakit p','p.id = r.penyakit_id');
+  ->join('kerusakan p','p.id = r.kerusakan_id');
   $res = $this->db->get();
 
   $arr_ref = array();
@@ -103,10 +103,10 @@ endforeach;
   foreach($res->result() as $row): 
   		$arr_ref[$row->id] = array(
   			"nama" => $row->nama,
-  			"umur" => $row->umur,
-  			"jk"   => $row->jk,
-  			"penyakit_id" => $row->penyakit_id,
-  			"penyakit" => $row->penyakit
+  			"jenis_printer" => $row->jenis_printer,
+  			"solusi"   => $row->solusi,
+  			"kerusakan_id" => $row->kerusakan_id,
+  			"kerusakan" => $row->kerusakan
   		);
 
   		$this->db->where("referensi_id",$row->id);
@@ -119,45 +119,18 @@ endforeach;
   		foreach($ref_gejala as $gejala_id => $bobot): 
 
 
-        $this->db->where("gejala_id_1",$gejala_id);
-        $jumlah = $this->db->get("kemiripan")->num_rows();
+     
 
 
 
-        if(in_array($gejala_id,$arr_ref[$row->id]['gejala']) && $jumlah > 0 ) {
-            // echo "$gejala_id adaaa.. di dalam db  <br />";
-
-            $ids = implode(",",$post['gejala_id']);
-            $sql = "select * from kemiripan where gejala_id_1 ='$gejala_id' and gejala_id_2 in($ids)";
-            $rx = $this->db->query($sql);
-
-            // echo $this->db->last_query()."<br />";
-            if($rx->num_rows() == 1) {
-                $dx = $rx->row();
-                $arr_ref[$row->id]['kemiripan'][$gejala_id] = $dx->bobot;
-            }
-            else if($rx->num_rows() == 0 ) {
-              $arr_ref[$row->id]['kemiripan'][$gejala_id] = 0;
-            }
-            else if($rx->num_rows() > 1 ) {
-                $tmp = 0; 
-                foreach($rx->result() as $rwx): 
-                    if($rwx->bobot > $tmp ) {
-                      $tmp = $rwx->bobot;
-                    }
-                endforeach;
-                $arr_ref[$row->id]['kemiripan'][$gejala_id] = $tmp;
-            }
-
-        }
-        else { 
+         
 
           // echo "tidakada $gejala_id <br />";
 
   			 $x = (in_array($gejala_id,$arr_ref[$row->id]['gejala']))?1:0;
   			 $y = (in_array($gejala_id,$post['gejala_id']))?1:0; 
          $arr_ref[$row->id]['kemiripan'][$gejala_id] = !($x xor $y);
-        }
+         
 
   			 
         
@@ -212,12 +185,12 @@ endforeach;
 
 // echo "id penyakit $id_penyakit"; exit;
 // $this->db->where("id",$id_penyakit);
-$this->db->where("id",$arr_ref[$id_penyakit]['penyakit_id']);
-$data_array['penyakit'] = $this->db->get("penyakit")->row();
+$this->db->where("id",$arr_ref[$id_penyakit]['kerusakan_id']);
+$data_array['kerusakan'] = $this->db->get("kerusakan")->row();
 
 // terakhir update id penyakit ke data  pemeriksaan 
 $this->db->where("id",$id);
-$this->db->update("pemeriksaan",array("penyakit_id"=>$id_penyakit));
+$this->db->update("pemeriksaan",array("kerusakan_id"=>$id_penyakit));
 
 
 $content = $this->load->view($this->controller."_view_result",$data_array,true);
@@ -272,7 +245,7 @@ SELECT p.*,
       sum( if(u.jk='P',1,0)) as P     
   
     FROM penyakit p 
-left join pemeriksaan pm on p.id = pm.penyakit_id
+left join pemeriksaan pm on p.id = pm.kerusakan_id
 left join pengguna u on u.id = pm.user_id 
   group by p.id 
   ) x 

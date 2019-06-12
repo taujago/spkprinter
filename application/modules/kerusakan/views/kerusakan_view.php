@@ -12,9 +12,11 @@
 		<thead >
 			<tr>
 				<th width="5%">NO </th>
+				<th width="10%">GAMBAR</th>			
 				<th width="5%">KODE </th>
 				<th width="50%">KERUSAKAN</th>
-				<th width="50%">SOLUSI</th>				 
+				<th width="50%">SOLUSI</th>		
+					 
 				<th width="10%">PROSES</th>
 				 
 			</tr>
@@ -23,13 +25,18 @@
 <?php 
 $n=0;
 foreach($record->result() as $row) : 
+
+$image = (!empty($row->gambar))?$row->gambar:"noimage.png";
+
 	$n++;
 ?>
 			<tr>
 				<th scope="row"><?php echo $n ?></th>
+				<td><img width="70px" height="70px" src="<?php echo base_url("uploads/$image") ?>"></td>
 				<td><?php echo $row->kode; ?></td>
 				<td><?php echo $row->kerusakan; ?></td>
 				<td><?php echo $row->solusi; ?></td>
+
 				 
 				<td>
 					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->kode; ?>','<?php echo $row->kerusakan; ?>','<?php echo $row->solusi; ?>');"  class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
@@ -52,8 +59,9 @@ foreach($record->result() as $row) :
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+			<form id="frmkriteria" method="post" enctype="multipart/form-data">
 			<div class="modal-body">
-				<form id="frmkriteria">
+				
 					<div class="form-group">
 						<label for="kode" class="form-control-label">Kode :</label>
 						<input type="text" name="kode" class="form-control" id="kode">
@@ -84,15 +92,21 @@ foreach($record->result() as $row) :
 
 					</div>
 
+					<div class="form-group">
+						<label for="solusi" class="form-control-label">Gambar :</label>
+						<input type="file"  name="gambar" class="form-control" id="gambar">
+
+					</div>
+
 <input type="hidden" name="id" id="id">
 
-				</form>
+				
 			</div>
 			<div class="modal-footer">
 				
-				<button id="btnsimpan" type="button" class="btn btn-primary"><i class="fa fa fa-paper-plane"></i> SIMPAN</button>
+				<button id="btnsimpan" type="submit" class="btn btn-primary"><i class="fa fa fa-paper-plane"></i> SIMPAN</button>
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-			</div>
+			</div></form>
 		</div>
 	</div>
 </div>

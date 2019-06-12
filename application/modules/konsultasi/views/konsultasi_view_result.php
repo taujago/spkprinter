@@ -1,4 +1,4 @@
-<div class="card">
+<!-- <div class="card">
 <div class="card-header">
 	<h3 class="card-title">DATA DIAGNOSA </h3>
 </div>
@@ -22,10 +22,10 @@
 	<div class="col-md-3"><strong> Tanggal Pemeriksaan </strong></div>
 	<div class="col-md-3">: <?php echo flipdate($userdata['tanggal']); ?> </div>
 
-</div>
+</div> -->
 <HR />
 
-<strong>Gejala yang dialami : </strong> <br />
+<strong>Gejala yang dipilih : </strong> <br />
 <ol>
 	<?php foreach($rec_gejala_hasil->result() as $row): ?>
 		<li><?php echo $row->gejala; ?></li>
@@ -35,28 +35,35 @@
 <br />
 <strong>Hasil Diagnosa </strong>
 <br />
-<strong>Nama Penyakit : </strong> <br />
-<?php echo $penyakit->penyakit." ( $penyakit->keterangan ) "; ?>
+<strong>Kerusakan  : </strong> <br />
+<?php echo $kerusakan->kerusakan; ?>
 <br /><br />
-<strong>Pengobatan : </strong><br />
-<?php echo $penyakit->pengobatan; ?>
+<strong>Solusi : </strong><br />
+<?php echo $kerusakan->solusi; ?>
+<br/><br />
+<strong> Gambar : </strong> <br /> 
+<?php 
+$image = (!empty($kerusakan->gambar))?$row->gambar:"noimage.png";
 
+?>
+<img  src="<?php echo base_url("uploads/$image") ?>">
 </div>	
 </div> 
 
 
-<div class="card">
+<div class="card mt-5">
 <div class="card-header">
 	<h3 class="card-title">DATA KEMIRIPAN </h3>
 </div>
 <div class="card-body">
-<table class="table table-striped">
+<table id="kemiripantb" class="table table-striped">
 	<thead>
 		<tr>
 			<th>No.</th>
-			<TH>Nama Pasien</TH>
-			<th>Range Nilai </th>
-			<th>Kriteria</th>
+			<TH>Kasus Lama</TH>
+			<th>Jarak Kasus lama dan baru </th>
+			<th>Kerusakan</th>
+			<th>Solusi</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -68,7 +75,8 @@
 				<td><?php echo $n; ?> </td>
 				<td><?php echo $arr_ref[$id]['nama']; ?></td>
 				<td><?php echo number_format($bobot,2); ?></td>
-				<td><?php echo $arr_ref[$id]['penyakit']; ?></td>
+				<td><?php echo $arr_ref[$id]['kerusakan']; ?></td>
+				<td><?php echo $arr_ref[$id]['solusi']; ?></td>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
@@ -107,6 +115,10 @@
 	</table>
 </div>
 </div>  -->
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#kemiripantb").dataTable();
+	});
+</script>
 
  

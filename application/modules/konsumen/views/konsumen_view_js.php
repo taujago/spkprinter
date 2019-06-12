@@ -41,7 +41,7 @@ $(document).ready(function(){
 
 
 	function tambahbaru(){
-		$("#judul").html('TAMBAH DATA PASIEN ');
+		$("#judul").html('TAMBAH DATA KONSUMEN ');
 		$("#formModal").modal('show');
 		v_url = '<?php echo site_url("$this->controller/save") ?>';
 	}
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 
 function edit(id,username,nama,hp,alamat,umur,jk){
-	$("#judul").html('EDIT DATA PASIEN ');
+	$("#judul").html('EDIT DATA KONSUMEN ');
 
 
 	
