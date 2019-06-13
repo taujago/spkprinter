@@ -42,9 +42,9 @@ class gejala extends master_controller {
  		if($this->form_validation->run() == TRUE ) { 
  			unset($post['id']);
 
- 			$arr_penyakit = isset($post['id_penyakit'])?$post['id_penyakit']:array();
+ 			$arr_kerusakan = isset($post['id_kerusakan'])?$post['id_kerusakan']:array();
 
- 			unset($post['id_penyakit']);
+ 			unset($post['id_kerusakan']);
 
  			$res = $this->db->insert("gejala",$post);
  			$id_gejala = $this->db->insert_id();
@@ -54,10 +54,10 @@ class gejala extends master_controller {
  				$this->db->where("id_gejala",$id_gejala);
  				$this->db->delete("pengetahuan");
 
- 				foreach($arr_penyakit as $id_penyakit):
+ 				foreach($arr_kerusakan as $id_kerusakan):
  					$arr_pengetahuan = array(
 
- 						"id_penyakit" => $id_penyakit,
+ 						"id_kerusakan" => $id_kerusakan,
  						"id_gejala" => $id_gejala
  					);
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
@@ -97,9 +97,9 @@ class gejala extends master_controller {
  			// unset($post['id']);
 
 
- 			$arr_penyakit = $post['id_penyakit'];
+ 			$arr_kerusakan = $post['id_kerusakan'];
 
- 			unset($post['id_penyakit']);
+ 			unset($post['id_kerusakan']);
 
 
  			$this->db->where("id",$post['id']);
@@ -110,10 +110,10 @@ class gejala extends master_controller {
  				$this->db->where("id_gejala",$post['id']);
  				$this->db->delete("pengetahuan");
 
- 				foreach($arr_penyakit as $id_penyakit):
+ 				foreach($arr_kerusakan as $id_kerusakan):
  					$arr_pengetahuan = array(
 
- 						"id_penyakit" => $id_penyakit,
+ 						"id_kerusakan" => $id_kerusakan,
  						"id_gejala" => $post['id']
  					);
  					$this->db->insert("pengetahuan",$arr_pengetahuan);
@@ -163,17 +163,17 @@ function get_penyakit($id_gejala){
 	$res = $this->db->get("pengetahuan");
 	$arr_pengetahuan = array();
 	foreach($res->result() as $row) : 
-		$arr_pengetahuan[] = $row->id_penyakit;
+		$arr_pengetahuan[] = $row->id_kerusakan;
 	endforeach;
 
 	// show_array($arr_pengetahuan);exit;
 
 	$this->db->order_by("kode");
-	$res  = $this->db->get("penyakit");
+	$res  = $this->db->get("kerusakan");
 
-	foreach($res->result() as $row_penyakit): 
-		$selected = ( in_array($row_penyakit->id, $arr_pengetahuan) )?"selected":"";
-		echo "<option value=$row_penyakit->id $selected>$row_penyakit->kode $row_penyakit->penyakit</option>";
+	foreach($res->result() as $row_kerusakan): 
+		$selected = ( in_array($row_kerusakan->id, $arr_pengetahuan) )?"selected":"";
+		echo "<option value=$row_kerusakan->id $selected>$row_kerusakan->kode $row_kerusakan->kerusakan</option>";
 
 		// $arr[] = array("id"=>$row_penyakit->id,"text"=>"$row_penyakit->kode $row_penyakit->penyakit");
 	endforeach;
@@ -194,11 +194,11 @@ function get_penyakit_all(){
 	// show_array($arr_pengetahuan);exit;
 
 	$this->db->order_by("kode");
-	$res  = $this->db->get("penyakit");
+	$res  = $this->db->get("kerusakan");
 
-	foreach($res->result() as $row_penyakit): 
+	foreach($res->result() as $row_kerusakan): 
 		 
-		echo "<option value=$row_penyakit->id >$row_penyakit->kode $row_penyakit->penyakit</option>";
+		echo "<option value=$row_kerusakan->id >$row_kerusakan->kode $row_kerusakan->kerusakan</option>";
 
 		// $arr[] = array("id"=>$row_penyakit->id,"text"=>"$row_penyakit->kode $row_penyakit->penyakit");
 	endforeach;

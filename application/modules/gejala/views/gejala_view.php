@@ -72,9 +72,9 @@ foreach($record->result() as $row) :
 						<label for="gejala" class="form-control-label">Penyakit :</label>
 
 						<?php 
-	$arr_penyakit = $this->cm->arr_dropdown_penyakit();
+	$arr_penyakit = $this->cm->arr_dropdown_kerusakan();
 	$arr_penyakit = array();
-	echo form_dropdown("id_penyakit[]",$arr_penyakit,'','id="id_penyakit" class="form-control" multiple="multiple" style="width:100%"');
+	echo form_dropdown("id_kerusakan[]",$arr_penyakit,'','id="id_kerusakan" class="form-control" multiple="multiple" style="width:100%"');
 
 	?>
   

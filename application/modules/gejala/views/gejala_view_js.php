@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 $("#tabel").dataTable(); 
 
-$("#id_penyakit").select2();
+$("#id_kerusakan").select2();
 
 	$("#btnsimpan").click(function(){
 		$.ajax({
@@ -54,7 +54,7 @@ $("#id_penyakit").select2();
  		success : function(htmldata){
 			 
 
-	$("#id_penyakit").select2('destroy').html(htmldata).select2();
+	$("#id_kerusakan").select2('destroy').html(htmldata).select2();
  
 	
 	
@@ -90,7 +90,7 @@ function edit(id,kode,gejala,bobot){
 		success : function(htmldata){
 			 
 
-		$("#id_penyakit").select2('destroy').html(htmldata).select2();
+		$("#id_kerusakan").select2('destroy').html(htmldata).select2();
  
 
 
