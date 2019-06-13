@@ -174,6 +174,7 @@ $this->db->select("g.*")
 ->where("pemeriksaan_id",$id);
 
 $data_array['rec_gejala_hasil'] = $this->db->get();
+// echo $this->db->last_query(); exit;
 
 // ambil data penyakit hasil 
 $id_penyakit = "";
@@ -187,7 +188,7 @@ endforeach;
 // $this->db->where("id",$id_penyakit);
 $this->db->where("id",$arr_ref[$id_penyakit]['kerusakan_id']);
 $data_array['kerusakan'] = $this->db->get("kerusakan")->row();
-
+// show_array($data_array['kerusakan']); exit;
 // terakhir update id penyakit ke data  pemeriksaan 
 $this->db->where("id",$id);
 $this->db->update("pemeriksaan",array("kerusakan_id"=>$id_penyakit));

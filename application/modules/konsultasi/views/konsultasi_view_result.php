@@ -27,7 +27,9 @@
 
 <strong>Gejala yang dipilih : </strong> <br />
 <ol>
-	<?php foreach($rec_gejala_hasil->result() as $row): ?>
+	<?php 
+
+	foreach($rec_gejala_hasil->result() as $row): ?>
 		<li><?php echo $row->gejala; ?></li>
 	<?php endforeach; ?>
 </ol>
@@ -41,12 +43,8 @@
 <strong>Solusi : </strong><br />
 <?php echo $kerusakan->solusi; ?>
 <br/><br />
-<strong> Gambar : </strong> <br /> 
-<?php 
-$image = (!empty($kerusakan->gambar))?$row->gambar:"noimage.png";
-
-?>
-<img  src="<?php echo base_url("uploads/$image") ?>">
+<strong> Dokumen manual  : </strong> <br /> 
+<?php echo (!empty($kerusakan->dokumen))?"<a target='blank' href='".base_url("uploads/$kerusakan->dokumen")."'>$kerusakan->dokumen</a>":""; ?>
 </div>	
 </div> 
 

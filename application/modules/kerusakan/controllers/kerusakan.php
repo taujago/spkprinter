@@ -32,17 +32,17 @@ class kerusakan extends master_controller {
 
 
 
-		if(isset($_FILES['gambar'])) { 
+		if(isset($_FILES['dokumen'])) { 
 
 			$config['upload_path']          = './uploads/';
-	        $config['allowed_types']        = 'gif|jpg|png';
-	        $config['max_size']             = 1000;
-	        $config['max_width']            = 1024;
-	        $config['max_height']           = 768;
+	        $config['allowed_types']        = 'pdf';
+	        $config['max_size']             = 10000;
+	        // $config['max_width']            = 1024;
+	        // $config['max_height']           = 768;
 
 	        $this->load->library('upload', $config);
 
-	        if ( ! $this->upload->do_upload('gambar'))
+	        if ( ! $this->upload->do_upload('dokumen'))
 	        {
 	                $error =   $this->upload->display_errors();
 	                
@@ -53,7 +53,7 @@ class kerusakan extends master_controller {
 	        else {
 	        	$dg =  $this->upload->data();
 	        	// show_array($dg); 
-	        	$post['gambar'] = $dg['file_name'];
+	        	$post['dokumen'] = $dg['file_name'];
 	        }
 
     	}
@@ -113,17 +113,17 @@ class kerusakan extends master_controller {
 
 		$post = $this->input->post();
 
-		if(isset($_FILES['gambar'])) { 
+		if(isset($_FILES['dokumen'])) { 
 
 			$config['upload_path']          = './uploads/';
-	        $config['allowed_types']        = 'gif|jpg|png';
-	        $config['max_size']             = 10000;
-	        $config['max_width']            = 10240;
-	        $config['max_height']           = 768;
+	        $config['allowed_types']        = 'pdf';
+	        $config['max_size']             = 100000;
+	        // $config['max_width']            = 10240;
+	        // $config['max_height']           = 768;
 
 	        $this->load->library('upload', $config);
 
-	        if ( ! $this->upload->do_upload('gambar'))
+	        if ( ! $this->upload->do_upload('dokumen'))
 	        {
 	                $error =   $this->upload->display_errors();
 	                
@@ -134,7 +134,7 @@ class kerusakan extends master_controller {
 	        else {
 	        	$dg =  $this->upload->data();
 	        	// show_array($dg); 
-	        	$post['gambar'] = $dg['file_name'];
+	        	$post['dokumen'] = $dg['file_name'];
 	        }
 
     	}

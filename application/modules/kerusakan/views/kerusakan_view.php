@@ -8,16 +8,16 @@
 
 
 <div class="table-responsive">
-	<table id="tabel" class="table card-table table-vcenter text-nowrap">
+	<table id="tabel" class="table card-table table-vcenter ">
 		<thead >
 			<tr>
 				<th width="5%">NO </th>
-				<th width="10%">GAMBAR</th>			
+						
 				<th width="5%">KODE </th>
-				<th width="50%">KERUSAKAN</th>
-				<th width="50%">SOLUSI</th>		
-					 
-				<th width="10%">PROSES</th>
+				<th width="20%">KERUSAKAN</th>
+				<th width="40%">SOLUSI</th>		
+				<th width="10%">DOKUMEN MANUAL</th>		 
+				<th width="15%">PROSES</th>
 				 
 			</tr>
 		</thead>
@@ -32,15 +32,16 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 ?>
 			<tr>
 				<th scope="row"><?php echo $n ?></th>
-				<td><img width="70px" height="70px" src="<?php echo base_url("uploads/$image") ?>"></td>
+				
 				<td><?php echo $row->kode; ?></td>
 				<td><?php echo $row->kerusakan; ?></td>
 				<td><?php echo $row->solusi; ?></td>
+				<td><?php echo (!empty($row->dokumen))?"<a target='blank' href='".base_url("uploads/$row->dokumen")."'>$row->dokumen</a>":""; ?></td>
 
 				 
 				<td>
-					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->kode; ?>','<?php echo $row->kerusakan; ?>','<?php echo $row->solusi; ?>');"  class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
-					<a href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="btn btn-danger text-light"><i class="fa fa-trash"></i>Hapus	</a>
+					<a style="margin-top:1px;" href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->kode; ?>','<?php echo $row->kerusakan; ?>','<?php echo $row->solusi; ?>');"  class="btn btn-warning btn-sm text-light"><i class="fa fa-pencil"></i>Edit</a>
+					<a style="margin-top:1px;" href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="btn btn-danger btn-sm text-light"><i class="fa fa-trash"></i>Hapus	</a>
 </td>
 			</tr>
 <?php endforeach; ?> 
@@ -93,8 +94,8 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 					</div>
 
 					<div class="form-group">
-						<label for="solusi" class="form-control-label">Gambar :</label>
-						<input type="file"  name="gambar" class="form-control" id="gambar">
+						<label for="dokumen" class="form-control-label">Dokumen manual (PDF) :</label>
+						<input type="file"  name="dokumen" class="form-control" id="dokumen">
 
 					</div>
 
