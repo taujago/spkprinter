@@ -92,12 +92,29 @@
 
 <div class="card mt-5">
 <div class="card-header">
-	<h3 class="card-title">HASIL PERHITUNGAN   </h3>
+	<h3 class="card-title">RINCIAN PERHITUNGAN   </h3>
+</div>
+
+<dir class="row">
+	<div class="col-md-12">
+	<H5>GEJALA YANG DIPILIH</H5>
+	<ul>
+		<?php foreach($data_gejala_pilihan as $gj):  ?>
+		<li><?php echo $gj['kode']." -  ".$gj['gejala']; ?></li>
+<?php endforeach; ?>
+	</ul>
+
+
+	</div>	
 </div>
 								
 
 
-<div class="table-responsive">
+
+
+
+
+<div class="mt-5 table-responsive">
 	<table id="tabel" class="table table-bordered card-table table-vcenter text-nowrap">
 
 <thead >

@@ -70,10 +70,14 @@ function review($id){
 //         )
 
 // )	
-$this->db->where("pemeriksaan_id",$id);
-$rs = $this->db->get("pemeriksaan_detail");
+$this->db->select('pd.gejala_id, g.*')
+->from('gejala g')
+->join('pemeriksaan_detail pd','pd.gejala_id = g.id');
+$this->db->where("pd.pemeriksaan_id",$id);
+$rs = $this->db->get();
 foreach($rs->result() as $r): 
 	$post['gejala_id'][] = $r->gejala_id;
+  $data_gejala_pilihan[$r->id] = array("kode"=>$r->kode,"gejala"=>$r->gejala);
 endforeach;
 
 
@@ -197,6 +201,7 @@ $data_array['kerusakan'] = $this->db->get("kerusakan")->row();
 $this->db->where("id",$id);
 $this->db->update("pemeriksaan",array("kerusakan_id"=>$id_penyakit));
 
+$data_array['data_gejala_pilihan'] = $data_gejala_pilihan;
 
 $content = $this->load->view($this->controller."_view_result",$data_array,true);
 
@@ -227,6 +232,9 @@ if($_SESSION['userdata'][0]['level'] == 0 ) {
 }
 
 $data_array['rec_pemeriksaan'] = $this->db->get();
+
+
+
 
 
 
