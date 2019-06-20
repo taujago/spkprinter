@@ -54,10 +54,17 @@
 									<div class="card-title text-center">Pendaftaran Konsumen</div>
 									<div class="row">
 										
-									<div class="col-md-12">
+									<div class="col-md-6">
 										<div class="form-group">
 										<label for="username" class="form-label">Nama pengguna</label>
 										<input type="text" class="form-control" id="username" name="username"  placeholder="Nama penggguna">
+									</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+										<label for="email" class="form-label">Email </label>
+										<input type="text" class="form-control" id="email" name="email"  placeholder="Email penggguna">
 									</div>
 									</div>
 									<div class="col-md-6">

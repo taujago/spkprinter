@@ -48,7 +48,7 @@ $(document).ready(function(){
 
 
 
-function edit(id,username,nama,hp,alamat,umur,jk){
+function edit(id,username,nama,hp,alamat,umur,jk,email){
 	$("#judul").html('EDIT DATA KONSUMEN ');
 
 
@@ -61,6 +61,7 @@ function edit(id,username,nama,hp,alamat,umur,jk){
 	$("#username").val(username);
 	$("#nama").val(nama);
 	$("#hp").val(hp);
+	$("#email").val(email);
 	$("#alamat").val(alamat);
 	$("#umur").val(umur);
 	$("#jk").val(jk).attr('selected','selected');

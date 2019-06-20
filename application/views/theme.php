@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sistem Pakar Printer</title>
+  <title>Sistem Pakar Diagnosa Kerusakan Printer</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url("theme/"); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -111,12 +111,12 @@
                   <span>DATA KONSUMEN</span>
                 </a>
               </li>
-             <!--  <li class="nav-item">
-                <a class="nav-link <?php echo ($this->controller=="laporan")?"active":""; ?>" href="<?php echo site_url("konsultasi/laporan"); ?>">
+             <li class="nav-item">
+                <a class="nav-link <?php echo ($this->controller=="laporan")?"active":""; ?>" href="<?php echo site_url("konsultasi/rekap"); ?>">
                   <i class="fa fa-file"></i>
-                  <span>REKAP HASIL KONSULTASI</span>
+                  <span>LAPORAN REKAPITULASI</span>
                 </a>
-              </li>  -->
+              </li>   
 <?php endif; ?> 
       <li class="nav-item">
                 <a class="nav-link <?php echo ($this->controller=="konsultasi")?"active":""; ?>" href="<?php echo site_url("konsultasi"); ?>">

@@ -49,7 +49,7 @@ foreach($record->result() as $row) :
 				 
 				 
 				<td>
-					<a href="#!" onclick="edit('<?php echo $row->id ?>','<?php echo $row->username ?>','<?php echo $row->nama ?>','<?php echo $row->hp ?>','<?php echo $row->alamat ?>','<?php echo $row->umur ?>','<?php echo $row->jk ?>')"   class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
+					<a href="#!" onclick="edit('<?php echo $row->id ?>','<?php echo $row->username ?>','<?php echo $row->nama ?>','<?php echo $row->hp ?>','<?php echo $row->alamat ?>','<?php echo $row->umur ?>','<?php echo $row->jk ?>','<?php echo $row->email ?>')"   class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
 					<a href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="btn btn-danger text-light"><i class="fa fa-trash"></i>Hapus	</a>
 </td>
 			</tr>
@@ -74,10 +74,16 @@ foreach($record->result() as $row) :
 			<form id="frmkriteria">
 				<div class="row">
 
-				 <div class="col-md-12">
+				 <div class="col-md-6">
 										<div class="form-group">
 										<label for="username" class="form-label">Nama pengguna</label>
 										<input type="text" class="form-control" id="username" name="username"  placeholder="Nama penggguna">
+									</div>
+									</div>
+				<div class="col-md-6">
+										<div class="form-group">
+										<label for="email" class="form-label">Email</label>
+										<input type="text" class="form-control" id="email" name="email"  placeholder="Email">
 									</div>
 									</div>
 									<div class="col-md-6">

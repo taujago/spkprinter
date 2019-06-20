@@ -153,6 +153,7 @@ endforeach;
 
 arsort($arr_hasil);
 
+// show_array($arr_hasil); exit;
  
 $data_array['ref_gejala'] = $ref_gejala;
 
@@ -173,6 +174,7 @@ $this->db->select("u.*, p.tanggal")
 ->where("p.id",$id);
 
 $data_array['userdata'] = $this->db->get()->row_array();
+
 
 
 // get data gejala yang dialami 
@@ -199,7 +201,7 @@ $data_array['kerusakan'] = $this->db->get("kerusakan")->row();
 // show_array($data_array['kerusakan']); exit;
 // terakhir update id penyakit ke data  pemeriksaan 
 $this->db->where("id",$id);
-$this->db->update("pemeriksaan",array("kerusakan_id"=>$id_penyakit));
+$this->db->update("pemeriksaan",array("kerusakan_id"=>$arr_ref[$id_penyakit]['kerusakan_id']));
 
 $data_array['data_gejala_pilihan'] = $data_gejala_pilihan;
 
@@ -272,6 +274,41 @@ $content = $this->load->view($this->controller."_laporan_view",$data_array,true)
 $this->set_title("LAPORAN REKAPITULASI HASIL PEMERIKSAAN");
 $this->set_content($content);
 $this->render();
+
+
+}
+
+function rekap(){
+  $data_array = array();
+
+   $content = $this->load->view($this->controller."_view_rekap",$data_array,true);
+
+    $this->set_title("LAPORAN REKAPITULASI HASIL KONSULTASI PASIEN");
+    $this->set_content($content);
+    $this->render();
+
+}
+
+
+
+function get_rekap(){
+  $post = $this->input->post();
+  extract($post);
+
+  $sql = "select 
+  k.* , 
+  count(*) as jumlah 
+from 
+  kerusakan k 
+   join pemeriksaan p on k.id = p.kerusakan_id
+ where 
+   year(tanggal) = '$tahun' 
+   and month(tanggal) = '$bulan' 
+ group by 
+
+ k.id";
+   $data_array['records'] = $this->db->query($sql);
+   $this->load->view("konsultasi_view_rekap_table",$data_array);
 
 
 }

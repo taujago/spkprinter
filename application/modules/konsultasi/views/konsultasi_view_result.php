@@ -23,9 +23,21 @@
 	<div class="col-md-3">: <?php echo flipdate($userdata['tanggal']); ?> </div>
 
 </div> -->
+
+<center><h3>LAPORAN HASIL DIAGNOSA KERUSAKAN PRINTER </h3> </center>
+
+<table class="table  table-bordered">
+	<tr><td width="30%">Nama Pelanggan </td><td> : <?php echo $userdata['nama']; ?></td></tr>
+	<tr><td>Alamat </td><td> : <?php echo $userdata['alamat']; ?></td></tr>
+	<tr><td>Email  </td><td> : <?php echo $userdata['email']; ?></td></tr>
+	<tr><td>No. hp  </td><td> : <?php echo $userdata['hp']; ?></td></tr>
+
+</table>
+
+
 <HR />
 
-<strong>Gejala yang dipilih : </strong> <br />
+<strong>Gejala  kerusakan: </strong> <br />
 <ol>
 	<?php 
 
@@ -49,72 +61,10 @@
 </div> 
 
 
-<div class="card mt-5">
-<div class="card-header">
-	<h3 class="card-title">DATA KEMIRIPAN </h3>
-</div>
-<div class="card-body">
-<table id="kemiripantb" class="table table-striped">
-	<thead>
-		<tr>
-			<th>No.</th>
-			<TH>Kasus Lama</TH>
-			<th>Jarak Kasus lama dan baru </th>
-			<th>Kerusakan</th>
-			<th>Solusi</th>
-		</tr>
-	</thead>
-	<tbody>
-		<?php $n=0; 
-		foreach($arr_hasil as $id => $bobot ) : 
-		$n++; 
-		?>
-			<tr>
-				<td><?php echo $n; ?> </td>
-				<td><?php echo $arr_ref[$id]['nama']; ?></td>
-				<td><?php echo number_format($bobot,2); ?></td>
-				<td><?php echo $arr_ref[$id]['kerusakan']; ?></td>
-				<td><?php echo $arr_ref[$id]['solusi']; ?></td>
-			</tr>
-		<?php endforeach; ?>
-	</tbody>
-</table>
-</div>
-</div>
- 
-
-
-
-
-
-
- 
-
-<div class="card mt-5">
-<div class="card-header">
-	<h3 class="card-title">RINCIAN PERHITUNGAN   </h3>
-</div>
-
-<dir class="row">
-	<div class="col-md-12">
-	<H5>GEJALA YANG DIPILIH</H5>
-	<ul>
-		<?php foreach($data_gejala_pilihan as $gj):  ?>
-		<li><?php echo $gj['kode']." -  ".$gj['gejala']; ?></li>
-<?php endforeach; ?>
-	</ul>
-
-
-	</div>	
-</div>
-								
-
-
-
-
-
-
 <div class="mt-5 table-responsive">
+
+<h3>HASIL PERHITUNGAN</h3>
+
 	<table id="tabel" class="table table-bordered card-table table-vcenter text-nowrap">
 
 <thead >
@@ -182,6 +132,74 @@
 		</tbody>
 	</table>
 </div>
+
+
+<div class="card mt-5">
+<div class="card-header">
+	<h3 class="card-title">DATA KEMIRIPAN </h3>
+</div>
+<div class="card-body">
+<table id="kemiripantb" class="table table-striped">
+	<thead>
+		<tr>
+			<th>No.</th>
+			<TH>Kasus Lama</TH>
+			<th>Jarak Kasus lama dan baru </th>
+			<th>Kerusakan</th>
+			<th>Solusi</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php $n=0; 
+		foreach($arr_hasil as $id => $bobot ) : 
+		$n++; 
+		?>
+			<tr>
+				<td><?php echo $n; ?> </td>
+				<td><?php echo $arr_ref[$id]['nama']; ?></td>
+				<td><?php echo number_format($bobot,2); ?></td>
+				<td><?php echo $arr_ref[$id]['kerusakan']; ?></td>
+				<td><?php echo $arr_ref[$id]['solusi']; ?></td>
+			</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>
+</div>
+</div>
+ 
+
+
+
+
+
+
+ 
+
+<div class="card mt-5">
+<div class="card-header">
+	<h3 class="card-title">RINCIAN PERHITUNGAN   </h3>
+</div>
+
+<dir class="row">
+	<div class="col-md-12">
+	<H5>GEJALA YANG DIPILIH</H5>
+	<ul>
+		<?php foreach($data_gejala_pilihan as $gj):  ?>
+		<li><?php echo $gj['kode']." -  ".$gj['gejala']; ?></li>
+<?php endforeach; ?>
+	</ul>
+
+
+	</div>	
+</div>
+								
+
+
+
+
+
+
+
 </div>   
 
 
