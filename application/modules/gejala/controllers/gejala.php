@@ -42,26 +42,26 @@ class gejala extends master_controller {
  		if($this->form_validation->run() == TRUE ) { 
  			unset($post['id']);
 
- 			$arr_kerusakan = isset($post['id_kerusakan'])?$post['id_kerusakan']:array();
+ 			// $arr_kerusakan = isset($post['id_kerusakan'])?$post['id_kerusakan']:array();
 
- 			unset($post['id_kerusakan']);
+ 			// unset($post['id_kerusakan']);
 
  			$res = $this->db->insert("gejala",$post);
- 			$id_gejala = $this->db->insert_id();
+ 			// $id_gejala = $this->db->insert_id();
 
  			if($res){
 
- 				$this->db->where("id_gejala",$id_gejala);
- 				$this->db->delete("pengetahuan");
+ 				// $this->db->where("id_gejala",$id_gejala);
+ 				// $this->db->delete("pengetahuan");
 
- 				foreach($arr_kerusakan as $id_kerusakan):
- 					$arr_pengetahuan = array(
+ 				// foreach($arr_kerusakan as $id_kerusakan):
+ 				// 	$arr_pengetahuan = array(
 
- 						"id_kerusakan" => $id_kerusakan,
- 						"id_gejala" => $id_gejala
- 					);
- 					$this->db->insert("pengetahuan",$arr_pengetahuan);
- 				endforeach;
+ 				// 		"id_kerusakan" => $id_kerusakan,
+ 				// 		"id_gejala" => $id_gejala
+ 				// 	);
+ 				// 	$this->db->insert("pengetahuan",$arr_pengetahuan);
+ 				// endforeach;
 
 
  				$ret = array("error"=>false,"message"=>"Data gejala berhasil disimpan");
@@ -97,7 +97,7 @@ class gejala extends master_controller {
  			// unset($post['id']);
 
 
- 			$arr_kerusakan = $post['id_kerusakan'];
+ 			 $arr_kerusakan = isset($post['id_kerusakan'])?$post['id_kerusakan']:array();
 
  			unset($post['id_kerusakan']);
 

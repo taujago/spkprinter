@@ -68,7 +68,7 @@ foreach($record->result() as $row) :
 						<input type="number" min="0" step="0.1" name="bobot" class="form-control" id="bobot">
 
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="gejala" class="form-control-label">Penyakit :</label>
 
 						<?php 
@@ -80,7 +80,7 @@ foreach($record->result() as $row) :
   
 
 					</div>
-
+ -->
 <input type="hidden" name="id" id="id">
 
 				</form>

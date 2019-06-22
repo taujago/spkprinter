@@ -152,7 +152,8 @@ class kerusakan extends master_controller {
  			// unset($post['id']);
 
 
- 			$arr_gejala = $post['id_gejala'];
+			$arr_gejala = isset($post['id_gejala'])?$post['id_gejala']:array();
+
 
  			unset($post['id_gejala']);
 
