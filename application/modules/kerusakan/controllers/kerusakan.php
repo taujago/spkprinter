@@ -247,8 +247,10 @@ function get_gejala_all(){
 	 
 
 	// show_array($arr_pengetahuan);exit;
+	$this->db->_protect_identifiers = FALSE;
+    $this->db->order_by("cast(substring(kode,2,3) as SIGNED )",true);
 
-	$this->db->order_by("kode");
+	// $this->db->order_by("kode");
 	$res  = $this->db->get("gejala");
 
 	foreach($res->result() as $row_gejala): 

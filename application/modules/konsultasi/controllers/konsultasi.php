@@ -283,7 +283,7 @@ function rekap(){
 
    $content = $this->load->view($this->controller."_view_rekap",$data_array,true);
 
-    $this->set_title("LAPORAN REKAPITULASI HASIL KONSULTASI PASIEN");
+    $this->set_title("LAPORAN REKAPITULASI HASIL KONSULTASI KERUSAKAN PRINTER");
     $this->set_content($content);
     $this->render();
 

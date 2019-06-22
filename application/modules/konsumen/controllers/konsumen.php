@@ -26,7 +26,7 @@ class konsumen extends master_controller {
 		 
 		$content = $this->load->view($this->controller."_view",$data_array,true);
 
-		$this->set_title("DATA PASIEN");
+		$this->set_title("DATA KONSUMEN");
 		$this->set_content($content);
 		$this->render();
 	}
