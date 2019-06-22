@@ -16,7 +16,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		
 		<!-- Title -->
-		<title>SISTEM PENDUKUNG KEPUTUSAN</title>
+  <title>Sistem Pakar Diagnosa Kerusakan Printer</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/fonts/fonts/font-awesome.min.css">
 		
 		<!-- Font Family -->
