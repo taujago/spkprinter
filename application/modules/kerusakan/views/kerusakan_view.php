@@ -80,7 +80,7 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 					</div>
 
 					 
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="gejala" class="form-control-label">Gejala :</label>
 
 						<?php 
@@ -91,7 +91,7 @@ $image = (!empty($row->gambar))?$row->gambar:"noimage.png";
 	?>
   
 
-					</div>
+					</div> -->
 
 					<div class="form-group">
 						<label for="dokumen" class="form-control-label">Dokumen manual (PDF) :</label>

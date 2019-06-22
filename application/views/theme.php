@@ -96,7 +96,7 @@
            
             <a class="collapse-item"  href="<?php echo site_url("gejala") ?>">GEJALA </a>
 <a class="collapse-item" href="<?php echo site_url("kerusakan") ?>">KERUSAKAN </a>
-<a class="collapse-item" href="<?php echo site_url("kerusakan/pengetahuan") ?>">PENGETAHUAN </a>
+<!-- <a class="collapse-item" href="<?php echo site_url("kerusakan/pengetahuan") ?>">PENGETAHUAN </a> -->
 <a class="collapse-item" href="<?php echo site_url("referensi") ?>">REFERENSI </a>
 <!-- <a class="collapse-item" href="<?php echo site_url("kemiripan") ?>">KEMIRIPAN GEJALA </a> -->
           </div>
