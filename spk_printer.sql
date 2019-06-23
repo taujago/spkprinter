@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 13, 2019 at 06:16 AM
+-- Generation Time: Jun 23, 2019 at 07:11 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.36
 
@@ -92,45 +92,47 @@ CREATE TABLE IF NOT EXISTS `kerusakan` (
   `kode` varchar(10) NOT NULL,
   `kerusakan` varchar(255) NOT NULL,
   `solusi` varchar(255) NOT NULL,
-  `gambar` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=latin1;
+  `dokumen` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `kerusakan`
 --
 
-INSERT INTO `kerusakan` (`id`, `kode`, `kerusakan`, `solusi`, `gambar`) VALUES
-(60, 'K1', 'General Error', 'Sebaiknya bila roda gear sudah aus segera berikan pelumas khusus untuk print Epson', 'logo-black.png'),
-(61, 'K2', 'Scanner Error', 'Sebaiknya scanner jangan dikasih beban diatasnya dan jauhkan dari kelembapan karena apabila scanner basah maka lampu laser terputus dan tempatkan printer pada tempat yang aman', 'htop.png'),
-(62, 'K3', 'Head tersumbat/tinta tidak keluar', 'Untuk mengawetkan head print, maka sebaiknya gunakan tinta yang satu merk saat awal pengisian tinta dan juga supaya head terus bagus sebaiknya gunakan mengeprint 2 kali dalam seminggu supaya tidak tersumbat', NULL),
-(63, 'K4', 'Paper jam', 'Supaya printer tidak sering mengalami paper jam maka gunakan kertas standar sesuai saran pabrikan, untuk mengurangi keausan karet assy', NULL),
-(64, 'K5', 'Mati total', 'Apabila daerah tempat kita tinggal listriknya tidak stabil dan sering mati lampu sebaiknya gunakan stabilizer atau UPS. Dan untuk lebih amannya lagi cabut kabel power listrik dari terminal setelah menggunakan printer', NULL),
-(65, 'K6', 'Mainboard rusak', 'Supaya mainboard tidak rusak, usahakan selalu berada pada tempat yang tidak berlembab dan juga pada tegangan listrik yang stabil, suppaya mainboard selalu aman gunakan pengatur tegangan misalnya stabilizer atau UPS', NULL),
-(66, 'K7', 'The paper output is open', 'usahakan selalu penutup dari printer tertutup dan apabila masih muncul keterangan error maka periksa encorder dan bersihkan', NULL),
-(67, 'K8', 'ASF sensor error', 'Jika sensor bermasalah banyak kemungkinan terjadi yaitu bisa jadi karena kotor atau karena komponen laser terlepas. Oleh karena itu, sebaiknya periksa satu per satu pertiap komponen sensor untuk di bersihkan.', NULL),
-(68, 'K9', 'Catridge cannot be recognized', 'jangan sesering mungkin melepas cartridge dari unit printer dan jangan menekan chip pada cartridge dan juga jangan sampai terkena tinta atau cairan lainnya pada chip. Hati-hati saat pengambilan cartridge dari unit printer dan saat pengisian tinta', NULL),
-(69, 'K10', 'Line feed error', 'jangan kenakan tinta pada line feed dan apabila terkena segera mungkin untuk mengambil tissue untuk membersihkannya dengan menggunakan cairan khusus', NULL),
-(70, 'K11', 'Cannot print the contens on creative park premium', 'ketika melakukan print perhatikan drivernya apabila driver yang diinstal dalam computer lebih dari satu drive. Set default print supaya mengeprint otomatis dan apabila kerusakan pada logic board maka ganti logic boardnya', NULL),
-(72, 'K12', 'The machine is not connected with the computer', 'periksa kabel printer dan kabel listrik. Ganti kabel atau power supply', NULL),
-(73, 'K13', 'Printer malfunction', 'cek assy dan apabila rusak maka ganti dengan yang baru', NULL),
-(74, 'K14', 'Mechanical printer malfunction', 'gunakan alat untuk menstabilkan tegangan listrik atau ganti power supply', NULL),
-(75, 'K15', 'Lampu indicator power tinta dan kertas berkedip', 'cobalah mematikan printer beberapa saat dan menyalakannya kembali', NULL),
-(76, 'K16', 'Driver printer error', 'pastikan driver printer telah terpasang', NULL),
-(77, 'K17', 'The machine is out of paper does not feed', 'periksa tipe kertas yang digunakan karena tipe kertas berpengaruh besar dalam keausan karet assy. Karena itu, selalu cek standar kertas yang disarankan oleh printer', NULL),
-(78, 'K18', 'Cannot communicate with the scanner', 'periksa tombol power lalu masuk ke pengaturan printer dan pilih run this program as an administrator', NULL),
-(79, 'K19', 'Blank page', 'cobalah untuk memeriksa tinta jika sudah kering gantilah dengan tinta yang baru', NULL),
-(80, 'K20', 'Halaman tidak lengkap', 'pastikan pengaturan halaman pada aplikasi yang digunakan sudah benar', NULL),
-(81, 'K21', 'Kertas tidak bisa keluar', 'cobalah untuk menarik paksa kertas dari printer', NULL),
-(82, 'K22', 'Mesin printer mencetak terlalu lambat', 'pastikan untuk tidak menjalankan aplikasi lain yang menggunakan banyak memori', NULL),
-(83, 'K23', 'Font yang tercetak tidak sama', 'pastikan sudah mengganti font yang digunakan dengan font berjenis “true type font”', NULL),
-(84, 'K24', 'Peringatan tinta habis', 'cobalah melakukan reset pada cartridge tinta. Dengan melakukan reset juga akan berisi penyusunan awal pada pirantu printer', NULL),
-(85, 'K25', 'Catridge kotor/head cleaning', 'cobalah melakukan head cleaning terlebih dahulu', NULL),
-(86, 'K26', 'Printer melampui batas pencetakan', 'cobalah reset printer dengan menggunakan software ressetter', NULL),
-(87, 'K27', 'Printer tidak bisa menyala/mencetak', 'pastikan sambungan kabel data printer apakah sudah terhubung dengan komputer dengan benar', NULL),
-(88, 'K28', 'Error B200', 'setelah mengisi tinta usahakan chip cartridge bersih agar kerusakan b200 bisal terselesaikan coba ganti power supply nya', NULL),
-(89, 'K29', 'Other hardware error', 'gunakan stabilizer atau UPS dengan anti mainboard', NULL),
-(90, 'K30', 'Tinta printer kering', 'cobalah untuk melakukan deep cleaning atau mengatasinya secara manual', NULL),
-(91, '424242', 'afadfa', 'fadsa', 'Lambang-USTJ.png');
+INSERT INTO `kerusakan` (`id`, `kode`, `kerusakan`, `solusi`, `dokumen`) VALUES
+(60, 'K1', 'General Error', 'Sebaiknya bila roda gear sudah aus segera berikan pelumas khusus untuk print Epson', ''),
+(61, 'K2', 'Scanner Error', 'Sebaiknya scanner jangan dikasih beban diatasnya dan jauhkan dari kelembapan karena apabila scanner basah maka lampu laser terputus dan tempatkan printer pada tempat yang aman', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(62, 'K3', 'Head tersumbat/tinta tidak keluar', 'Untuk mengawetkan head print, maka sebaiknya gunakan tinta yang satu merk saat awal pengisian tinta dan juga supaya head terus bagus sebaiknya gunakan mengeprint 2 kali dalam seminggu supaya tidak tersumbat', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(63, 'K4', 'Paper jam', 'Supaya printer tidak sering mengalami paper jam maka gunakan kertas standar sesuai saran pabrikan, untuk mengurangi keausan karet assy', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(64, 'K5', 'Mati total', 'Apabila daerah tempat kita tinggal listriknya tidak stabil dan sering mati lampu sebaiknya gunakan stabilizer atau UPS. Dan untuk lebih amannya lagi cabut kabel power listrik dari terminal setelah menggunakan printer', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(65, 'K6', 'Mainboard rusak', 'Supaya mainboard tidak rusak, usahakan selalu berada pada tempat yang tidak berlembab dan juga pada tegangan listrik yang stabil, suppaya mainboard selalu aman gunakan pengatur tegangan misalnya stabilizer atau UPS', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(66, 'K7', 'The paper output is open', 'usahakan selalu penutup dari printer tertutup dan apabila masih muncul keterangan error maka periksa encorder dan bersihkan', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(67, 'K8', 'ASF sensor error', 'Jika sensor bermasalah banyak kemungkinan terjadi yaitu bisa jadi karena kotor atau karena komponen laser terlepas. Oleh karena itu, sebaiknya periksa satu per satu pertiap komponen sensor untuk di bersihkan.', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(68, 'K9', 'Catridge cannot be recognized', 'jangan sesering mungkin melepas cartridge dari unit printer dan jangan menekan chip pada cartridge dan juga jangan sampai terkena tinta atau cairan lainnya pada chip. Hati-hati saat pengambilan cartridge dari unit printer dan saat pengisian tinta', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(69, 'K10', 'Line feed error', 'jangan kenakan tinta pada line feed dan apabila terkena segera mungkin untuk mengambil tissue untuk membersihkannya dengan menggunakan cairan khusus', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(70, 'K11', 'Cannot print the contens on creative park premium', 'ketika melakukan print perhatikan drivernya apabila driver yang diinstal dalam computer lebih dari satu drive. Set default print supaya mengeprint otomatis dan apabila kerusakan pada logic board maka ganti logic boardnya', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(72, 'K12', 'The machine is not connected with the computer', 'periksa kabel printer dan kabel listrik. Ganti kabel atau power supply', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(73, 'K13', 'Printer malfunction', 'cek assy dan apabila rusak maka ganti dengan yang baru', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(74, 'K14', 'Mechanical printer malfunction', 'gunakan alat untuk menstabilkan tegangan listrik atau ganti power supply', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(75, 'K15', 'Lampu indicator power tinta dan kertas berkedip', 'cobalah mematikan printer beberapa saat dan menyalakannya kembali', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(76, 'K16', 'Driver printer error', 'pastikan driver printer telah terpasang', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(77, 'K17', 'The machine is out of paper does not feed', 'periksa tipe kertas yang digunakan karena tipe kertas berpengaruh besar dalam keausan karet assy. Karena itu, selalu cek standar kertas yang disarankan oleh printer', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(78, 'K18', 'Cannot communicate with the scanner', 'periksa tombol power lalu masuk ke pengaturan printer dan pilih run this program as an administrator', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(79, 'K19', 'Blank page', 'cobalah untuk memeriksa tinta jika sudah kering gantilah dengan tinta yang baru', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(80, 'K20', 'Halaman tidak lengkap', 'pastikan pengaturan halaman pada aplikasi yang digunakan sudah benar', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(81, 'K21', 'Kertas tidak bisa keluar', 'cobalah untuk menarik paksa kertas dari printer', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(82, 'K22', 'Mesin printer mencetak terlalu lambat', 'pastikan untuk tidak menjalankan aplikasi lain yang menggunakan banyak memori', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(83, 'K23', 'Font yang tercetak tidak sama', 'pastikan sudah mengganti font yang digunakan dengan font berjenis “true type font”', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(84, 'K24', 'Peringatan tinta habis', 'cobalah melakukan reset pada cartridge tinta. Dengan melakukan reset juga akan berisi penyusunan awal pada pirantu printer', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(85, 'K25', 'Catridge kotor/head cleaning', 'cobalah melakukan head cleaning terlebih dahulu', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(86, 'K26', 'Printer melampui batas pencetakan', 'cobalah reset printer dengan menggunakan software ressetter', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(87, 'K27', 'Printer tidak bisa menyala/mencetak', 'pastikan sambungan kabel data printer apakah sudah terhubung dengan komputer dengan benar', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(88, 'K28', 'Error B200', 'setelah mengisi tinta usahakan chip cartridge bersih agar kerusakan b200 bisal terselesaikan coba ganti power supply nya', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(89, 'K29', 'Other hardware error', 'gunakan stabilizer atau UPS dengan anti mainboard', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(90, 'K30', 'Tinta printer kering', 'cobalah untuk melakukan deep cleaning atau mengatasinya secara manual', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(91, '424242', 'afadfa', 'fadsa', ''),
+(92, '33', 'FKDjfk', 'fkdfdk', 'Gmail_-_Konfirmasi_Pendaftaran_LPSE.pdf'),
+(93, 'DFD', 'ADSFAAD', '334REFAFFFFDS F FSF ', '');
 
 -- --------------------------------------------------------
 
@@ -143,17 +145,14 @@ CREATE TABLE IF NOT EXISTS `pemeriksaan` (
   `tanggal` date DEFAULT NULL,
   `user_id` int(11) NOT NULL,
   `kerusakan_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemeriksaan`
 --
 
 INSERT INTO `pemeriksaan` (`id`, `tanggal`, `user_id`, `kerusakan_id`) VALUES
-(44, '2019-05-30', 1, 7),
-(45, '2019-05-31', 1, 4),
-(46, '2019-06-01', 1, 5),
-(47, '2019-06-13', 1, 7);
+(52, '2019-06-20', 1, 60);
 
 -- --------------------------------------------------------
 
@@ -165,23 +164,17 @@ CREATE TABLE IF NOT EXISTS `pemeriksaan_detail` (
   `id` int(11) NOT NULL,
   `pemeriksaan_id` int(11) NOT NULL,
   `gejala_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=219 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pemeriksaan_detail`
 --
 
 INSERT INTO `pemeriksaan_detail` (`id`, `pemeriksaan_id`, `gejala_id`) VALUES
-(184, 44, 149),
-(185, 44, 123),
-(186, 45, 132),
-(187, 45, 136),
-(188, 45, 125),
-(189, 46, 132),
-(190, 46, 134),
-(191, 46, 153),
-(192, 47, 164),
-(193, 47, 173);
+(215, 52, 163),
+(216, 52, 176),
+(217, 52, 178),
+(218, 52, 189);
 
 -- --------------------------------------------------------
 
@@ -193,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `pengetahuan` (
   `id` int(11) NOT NULL,
   `id_kerusakan` int(11) NOT NULL,
   `id_gejala` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=372 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=377 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengetahuan`
@@ -212,12 +205,11 @@ INSERT INTO `pengetahuan` (`id`, `id_kerusakan`, `id_gejala`) VALUES
 (361, 6, 122),
 (362, 44, 122),
 (363, 52, 122),
-(366, 91, 166),
-(367, 91, 174),
-(368, 91, 193),
-(369, 60, 165),
 (370, 61, 166),
-(371, 61, 157);
+(371, 61, 157),
+(374, 92, 176),
+(375, 92, 157),
+(376, 60, 165);
 
 -- --------------------------------------------------------
 
@@ -234,22 +226,23 @@ CREATE TABLE IF NOT EXISTS `pengguna` (
   `hp` varchar(20) NOT NULL,
   `alamat` text NOT NULL,
   `jk` varchar(2) NOT NULL,
-  `umur` int(11) NOT NULL
+  `umur` int(11) NOT NULL,
+  `email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pengguna`
 --
 
-INSERT INTO `pengguna` (`id`, `username`, `password`, `level`, `nama`, `hp`, `alamat`, `jk`, `umur`) VALUES
-(1, 'admin', '0cc175b9c0f1b6a831c399e269772661', 1, 'Aministrator', '08132945559', 'Jl. kenair no. 343', 'L', 0),
-(7, 'budi', '0cc175b9c0f1b6a831c399e269772661', 0, 'Firmansyah', '0813280800', 'jl. kenari no. 34', 'L', 20),
-(8, 'bejo', '7fc56270e7a70fa81a5935b72eacbe29', 0, 'Bejo sandix', '0813243595', 'Jl. keramat jadixxx', 'P', 40),
-(9, 'heri', '0cc175b9c0f1b6a831c399e269772661', 0, 'Heru hendriyadi', '45838538r3985', 'Jl. undru no. 4', 'P', 40),
-(10, 'heru', '0cc175b9c0f1b6a831c399e269772661', 0, 'Heru hendriyadi', '083848583', 'Jl. kenari no. 345', 'L', 3),
-(11, 'eko', '0cc175b9c0f1b6a831c399e269772661', 0, 'Eko kurniawan', '03895935893', 'Jl. kenari no. 335', 'L', 25),
-(12, 'test', '202cb962ac59075b964b07152d234b70', 0, 'Test umar', '03909343', 'Hermaafdf ', 'L', 223),
-(13, 'adsd', '0cc175b9c0f1b6a831c399e269772661', 0, 'dfjdkfdjk', '935838945', 'fjdsalfjlf jadsa sasad', 'L', 34);
+INSERT INTO `pengguna` (`id`, `username`, `password`, `level`, `nama`, `hp`, `alamat`, `jk`, `umur`, `email`) VALUES
+(1, 'admin', '0cc175b9c0f1b6a831c399e269772661', 1, 'Aministrator', '08132945559', 'Jl. kenair no. 343', 'L', 0, NULL),
+(7, 'budi', '0cc175b9c0f1b6a831c399e269772661', 0, 'Firmansyah', '0813280800', 'jl. kenari no. 34', 'L', 20, 'bejo@gmail.com'),
+(8, 'bejo', '7fc56270e7a70fa81a5935b72eacbe29', 0, 'Bejo sandix', '0813243595', 'Jl. keramat jadixxx', 'P', 40, NULL),
+(9, 'heri', '0cc175b9c0f1b6a831c399e269772661', 0, 'Heru hendriyadi', '45838538r3985', 'Jl. undru no. 4', 'P', 40, NULL),
+(10, 'heru', '0cc175b9c0f1b6a831c399e269772661', 0, 'Heru hendriyadi', '083848583', 'Jl. kenari no. 345', 'L', 3, NULL),
+(11, 'eko', '0cc175b9c0f1b6a831c399e269772661', 0, 'Eko kurniawan', '03895935893', 'Jl. kenari no. 335', 'L', 25, NULL),
+(12, 'test', '202cb962ac59075b964b07152d234b70', 0, 'Test umar', '03909343', 'Hermaafdf ', 'L', 223, NULL),
+(13, 'adsd', '0cc175b9c0f1b6a831c399e269772661', 0, 'dfjdkfdjk', '935838945', 'fjdsalfjlf jadsa sasad', 'L', 34, NULL);
 
 -- --------------------------------------------------------
 
@@ -269,7 +262,7 @@ CREATE TABLE IF NOT EXISTS `referensi` (
 --
 
 INSERT INTO `referensi` (`id`, `nama`, `jenis_printer`, `kerusakan_id`) VALUES
-(7, 'P13', 'Canon 34', 81),
+(7, 'P14', 'Canon 34', 81),
 (8, 'P13', 'Epson bla bla ba', 60);
 
 -- --------------------------------------------------------
@@ -282,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `referensi_detail` (
   `id` int(11) NOT NULL,
   `gejala_id` int(11) NOT NULL,
   `referensi_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `referensi_detail`
@@ -300,15 +293,16 @@ INSERT INTO `referensi_detail` (`id`, `gejala_id`, `referensi_id`) VALUES
 (26, 122, 5),
 (27, 150, 5),
 (28, 124, 5),
-(29, 164, 7),
-(30, 166, 7),
-(31, 184, 7),
-(32, 193, 7),
-(33, 164, 8),
-(34, 174, 8),
-(35, 189, 8),
-(36, 193, 8),
-(37, 158, 8);
+(42, 154, 7),
+(43, 155, 7),
+(44, 156, 7),
+(45, 157, 7),
+(46, 158, 7),
+(47, 163, 8),
+(48, 159, 8),
+(49, 160, 8),
+(50, 161, 8),
+(51, 162, 8);
 
 --
 -- Indexes for dumped tables
@@ -376,22 +370,22 @@ ALTER TABLE `gejala`
 -- AUTO_INCREMENT for table `kerusakan`
 --
 ALTER TABLE `kerusakan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=92;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=94;
 --
 -- AUTO_INCREMENT for table `pemeriksaan`
 --
 ALTER TABLE `pemeriksaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=53;
 --
 -- AUTO_INCREMENT for table `pemeriksaan_detail`
 --
 ALTER TABLE `pemeriksaan_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=194;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=219;
 --
 -- AUTO_INCREMENT for table `pengetahuan`
 --
 ALTER TABLE `pengetahuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=372;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=377;
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
@@ -406,7 +400,7 @@ ALTER TABLE `referensi`
 -- AUTO_INCREMENT for table `referensi_detail`
 --
 ALTER TABLE `referensi_detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=52;
 --
 -- Constraints for dumped tables
 --
