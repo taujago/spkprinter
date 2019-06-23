@@ -26,7 +26,7 @@ class referensi extends master_controller {
 		 
 		$content = $this->load->view($this->controller."_view",$data_array,true);
 
-		$this->set_title("DATA  REFERENSI KERUSAKAN DAN SOLUSI ");
+		$this->set_title("DATA  BASIS ATURAN");
 		$this->set_content($content);
 		$this->render();
 	}

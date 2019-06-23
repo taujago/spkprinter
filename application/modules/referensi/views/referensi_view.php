@@ -13,7 +13,7 @@
 			<tr>
 				<th width="5%">NO </th>
 				<th width="10%">NAMA </th>
-				<th width="5%">JENIS PRINTER</th>				 
+				<!-- <th width="5%">JENIS PRINTER</th>				  -->
 				<th width="10%">GEJALA</th>
 				
 				<th width="10%">KERUSAKAN</th>			
@@ -31,7 +31,7 @@ foreach($record->result() as $row) :
 			<tr>
 				<th scope="row"><?php echo $n ?></th>
 				<td><?php echo $row->nama; ?></td>
-				<td><?php echo $row->jenis_printer; ?></td>
+				<!-- <td><?php echo $row->jenis_printer; ?></td> -->
 			 
 				<td><?php echo $row->gejala; ?></td>
 				<td><?php echo $row->kodekerusakan; ?></td>
