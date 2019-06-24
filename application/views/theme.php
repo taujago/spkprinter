@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Sistem Pakar Diagnosa Kerusakan Printer</title>
+  <title>Sistem Pakar Mendeteksi Kerusakan Printer Epson L360</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?php echo base_url("theme/"); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -80,7 +80,7 @@
       <li class="nav-item">
                 <a class="nav-link <?php echo ($this->controller=="home")?"active":""; ?>" href="<?php echo site_url("home"); ?>">
                   <i class="fa fa-home"></i>
-                  <span>DASHBOARD</span>
+                  <span>BERANDA</span>
                 </a>
       </li>
 
@@ -133,7 +133,7 @@
               <li class="nav-item">
                 <a class="nav-link <?php echo ($this->controller=="konsultasi/listview")?"active":""; ?>" href="<?php echo site_url("konsultasi/listview"); ?>">
                   <i class="fa fa-window-restore"></i>
-                  <span>LIHAT DATA KONSULTASI</span>
+                  <span>LAPORAN DATA KONSULTASI</span>
                 </a>
               </li>
 

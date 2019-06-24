@@ -44,7 +44,7 @@ $("#gejala_id").select2();
 
 	function tambahbaru(){
 		$("#formModal").modal('show');
-		$("#judul").html('TAMBAH DATA REFERENSI ');
+		$("#judul").html('TAMBAH DATA BASIS PENGETAHUAN ');
 		$("#kode").val('');
 		$("#penyakit").val('');
 		v_url = '<?php echo site_url("$this->controller/save") ?>';
@@ -70,8 +70,8 @@ $("#gejala_id").select2();
 
 
 
-function edit(id,nama,jenis_printer,kerusakan_id){
-	$("#judul").html('EDIT DATA REFENSI ');
+function edit(id,nama,kerusakan_id){
+		$("#judul").html('EDIT DATA BASIS PENGETAHUAN ');
 	
 	v_url = '<?php echo site_url("$this->controller/update") ?>';
 
@@ -79,8 +79,7 @@ function edit(id,nama,jenis_printer,kerusakan_id){
 
 	$("#id").val(id);
 	$("#nama").val(nama);
-	$("#jenis_printer").val(jenis_printer);
-	$("#kerusakan_id").val(kerusakan_id).attr('selected','selected');
+ 	$("#kerusakan_id").val(kerusakan_id).attr('selected','selected');
  	$("#formModal").modal('show');
 
 

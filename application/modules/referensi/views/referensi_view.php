@@ -40,7 +40,7 @@ foreach($record->result() as $row) :
 				
 				 
 				<td>
-					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->nama; ?>','<?php echo $row->jenis_printer; ?>','<?php echo $row->kerusakan_id; ?>');"  class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
+					<a href="#!"  onclick="edit('<?php echo $row->id; ?>','<?php echo $row->nama; ?>','<?php echo $row->kerusakan_id; ?>');"  class="btn btn-warning text-light"><i class="fa fa-pencil"></i>Edit</a>
 					<a href="#!" onclick="hapus('<?php echo $row->id; ?>');"  class="btn btn-danger text-light"><i class="fa fa-trash"></i>Hapus	</a>
 </td>
 			</tr>
@@ -66,11 +66,11 @@ foreach($record->result() as $row) :
 						<label for="nama" class="form-control-label">Nama </label>
 						<input type="text" name="nama" class="form-control" id="nama" placeholder="Nama ">
 					</div>
-					<div class="form-group">
+					<!-- <div class="form-group">
 						<label for="jenis_printer" class="form-control-label">Jenis Printer:</label>
 						<input type="text"   name="jenis_printer" class="form-control" id="jenis_printer" placeholder="Jenis Printer">
 
-					</div>
+					</div> -->
 
 					 
 

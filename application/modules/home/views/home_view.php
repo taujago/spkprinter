@@ -1,7 +1,7 @@
 <div class="row mt-lg-5" >
 	<div class="col-md-12">
 		<CENTER>
-			<H3>SELAMAT DATANG DI SISTEM PAKAR DETEKSI KERUSAKAN PRINTER </H3>
+			<H3>SELAMAT DATANG DI SISTEM PAKAR DETEKSI KERUSAKAN PRINTER EPSON L360</H3>
 
 			<h4>
 				Dengan menggunakan metode Case Based Reasoning

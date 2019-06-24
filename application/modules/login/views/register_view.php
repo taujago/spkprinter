@@ -16,7 +16,7 @@
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 		
 		<!-- Title -->
-  <title>Sistem Pakar Diagnosa Kerusakan Printer</title>
+  <title>Sistem Pakar Mendeteksi Kerusakan Printer Epson L360</title>
 		<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/fonts/fonts/font-awesome.min.css">
 		
 		<!-- Font Family -->
