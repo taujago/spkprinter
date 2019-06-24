@@ -72,10 +72,10 @@ class referensi extends master_controller {
  				endforeach;
 
 
- 				$ret = array("error"=>false,"message"=>"Data referensi berhasil disimpan");
+ 				$ret = array("error"=>false,"message"=>"Data basis aturan berhasil disimpan");
  			}
  			else {
- 				$ret = array("error"=>true,"message"=>"Data referensi disimpan".mysql_error());
+ 				$ret = array("error"=>true,"message"=>"Data basis aturan disimpan".mysql_error());
  			}
  		}
  		else {
@@ -131,7 +131,7 @@ class referensi extends master_controller {
 
 
 
- 				$ret = array("error"=>false,"message"=>"Data referensi berhasil diupdate");
+ 				$ret = array("error"=>false,"message"=>"Data basis aturan berhasil diupdate");
  			}
  			else {
  				$ret = array("error"=>true,"message"=>"Data gagal diupdate".mysql_error());
@@ -157,10 +157,10 @@ function hapus($id) {
 		$this->db->delete("referensi_detail");
 
 
-		$ret = array("error"=>false,"message"=>"Data harga berhasil dihapus");
+		$ret = array("error"=>false,"message"=>"Data basis aturan berhasil dihapus");
 	}
 	else {
-		$ret = array("error"=>true,"message"=>"Data gagal dihapus".mysql_error());
+		$ret = array("error"=>true,"message"=>"Data basis aturan dihapus".mysql_error());
 
 	}
 	echo json_encode($ret);
