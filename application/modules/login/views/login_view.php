@@ -64,16 +64,11 @@ html {
 									</div>
 									<div class="form-group">
 										<label for="password" class="form-label">Kata sandi
-											<a href="<?php echo site_url("login/lupapassword"); ?>" class="float-right small">Lupa password</a>
+											 
 										</label>
 										<input type="password" class="form-control" id="password"  name="password" placeholder="Kata sandi">
 									</div>
-									<div class="form-group">
-										<label class="custom-control custom-checkbox">
-											<input type="checkbox" class="custom-control-input" />
-											<span class="custom-control-label">Ingat saya </span>
-										</label>
-									</div>
+									 
 									<div class="form-footer">
 										<button type="submit" class="btn btn-primary btn-block"> <i class="fa fa-check"></i> Masuk </button>
 									</div>
