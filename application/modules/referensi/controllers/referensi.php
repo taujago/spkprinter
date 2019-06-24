@@ -39,7 +39,7 @@ class referensi extends master_controller {
 
 		$this->load->library('form_validation');
  		$this->form_validation->set_rules('nama','Nama','required');
- 		$this->form_validation->set_rules('jenis_printer','Jenis Printer','required');
+ 		// $this->form_validation->set_rules('jenis_printer','Jenis Printer','required');
  		
 		 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
@@ -94,7 +94,7 @@ class referensi extends master_controller {
 
 		$this->load->library('form_validation');
  		$this->form_validation->set_rules('nama','Nama','required');
- 		$this->form_validation->set_rules('jenis_printer','Jenis Printer','required');
+ 		// $this->form_validation->set_rules('jenis_printer','Jenis Printer','required');
  		
 		 
 		$this->form_validation->set_message('required', ' %s Harus diisi ');
