@@ -202,7 +202,7 @@ $data_array['kerusakan'] = $this->db->get("kerusakan")->row();
 // terakhir update id penyakit ke data  pemeriksaan 
 $this->db->where("id",$id);
 $this->db->update("pemeriksaan",array("kerusakan_id"=>$arr_ref[$id_penyakit]['kerusakan_id']));
-
+$data_array['post'] = $post;
 $data_array['data_gejala_pilihan'] = $data_gejala_pilihan;
 
 $content = $this->load->view($this->controller."_view_result",$data_array,true);

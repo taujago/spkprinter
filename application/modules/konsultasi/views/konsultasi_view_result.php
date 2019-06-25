@@ -24,6 +24,17 @@
 
 </div> -->
 
+<style type="text/css">
+	.merah {
+		
+		background-color: blue;
+	}
+	.kuning {
+		background-color: green;
+	}
+</style>
+
+
 <center><h3>LAPORAN HASIL DIAGNOSA KERUSAKAN PRINTER </h3> </center>
 
 <table class="table  table-bordered">
@@ -77,9 +88,12 @@
 		</tr>
 		<tr>
 			<?php 
-				foreach($data_gejala as $dg) : 
+				foreach($data_gejala as $idg => $dg) : 
+
+				$class = in_array($idg, $post['gejala_id'])?"merah":"";
+
 			?>
-				<th><?php echo $dg['kode'] ?></th>
+				<th class="<?php echo $class; ?>"><?php echo $dg['kode'] ?></th>
 			<?php endforeach; ?>
 		</tr>
 
@@ -113,8 +127,12 @@
 		foreach($row['kemiripan'] as $id_gejala => $bobot ) :  
 			// $total_bobot += empty($bobot)?"0":$bobot;
 			$total_jumlah += $arr_ref[$id]['jumlah'][$id_gejala];
+
+			$class = (in_array($id_gejala,$arr_ref[$id]['gejala']))?"kuning":"";
+
+
 			?>
-			<td><?php echo empty($bobot)?"0":$bobot; ?> / 
+			<td class="<?php echo $class;  ?>"><?php //echo empty($bobot)?"0":$bobot; ?> 
 				<?php echo  $arr_ref[$id]['jumlah'][$id_gejala]; ?>
 			 </td>
 		<?php endforeach; ?>
