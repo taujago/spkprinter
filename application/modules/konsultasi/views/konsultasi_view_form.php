@@ -76,7 +76,7 @@
 
 <div class="row mt-3">
 	<div class="col-md-6">
-   <button type="reset" class="btn btn-danger btn-block">RESET </button>
+   <a  href="#!" id="btnreset" class="btn btn-danger btn-block">RESET </a>
 	</div>
 	<div class="col-md-6">
    <button type="submit" class="btn btn-primary btn-block">LANJUTKAN </button>
@@ -88,6 +88,13 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#gejala_id").select2();
+
+
+$("#btnreset").click(function(){
+	  $("#gejala_id").val(null).trigger('change');
+
+});
+
 });
 </script>
 

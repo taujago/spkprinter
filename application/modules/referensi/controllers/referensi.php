@@ -12,16 +12,21 @@ class referensi extends master_controller {
 		// echo "fuckkk.."; exit;
 		$data_array = array();
 
-
 		$this->db->select('r.*, p.kode as kodekerusakan, p.solusi, group_concat(g.kode) as gejala ',false)
 		->from('referensi r')
 		->join("referensi_detail rd","r.id = rd.referensi_id")
 		->join("gejala g","g.id = rd.gejala_id")
 		->join("kerusakan p","p.id = r.kerusakan_id ")
-		->order_by("g.kode")
-		->group_by("r.id");
+ 		->group_by("r.id");
+
+		$this->db->_protect_identifiers = FALSE;
+
+	    $this->db->order_by("cast(substring(g.kode,2,3) as SIGNED )",true);
+		// $this->db->_protect_identifiers = true;
+
 
 		$res = $this->db->get();
+		// echo $this->db->last_query(); exit;
 		$data_array['record'] = $res; 
 		 
 		$content = $this->load->view($this->controller."_view",$data_array,true);
