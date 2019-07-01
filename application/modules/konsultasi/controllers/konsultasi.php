@@ -100,7 +100,9 @@ endforeach;
 // ambil data referensi pasien lama 
   $this->db->select("r.*, p.kerusakan, p.solusi ")
   ->from('referensi r')
+  ->join('referensi_detail rd','rd.referensi_id = r.id')
   ->join('kerusakan p','p.id = r.kerusakan_id');
+  $this->db->order_by("r.id");
   $res = $this->db->get();
 
   $arr_ref = array();
@@ -125,6 +127,7 @@ endforeach;
   		foreach($ref_gejala as $gejala_id => $bobot): 
 
 
+        // show_array($arr_ref); 
      
 
 
